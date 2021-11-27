@@ -1,3 +1,5 @@
+const User = require('../models/user')
+
 module.exports.signUp = (req, res) => {
     // Try to find the user
     User.findOne({email : req.body.email}, (err, user) => {
@@ -10,6 +12,8 @@ module.exports.signUp = (req, res) => {
         }
         if(!user) {
             User.create(req.body, (err, user) => {
+                console.log(req)
+                console.log(req.body)
                 if(err){
                     console.log(`Error in creating user: ${err}`)
                     return res.status(404).json({
