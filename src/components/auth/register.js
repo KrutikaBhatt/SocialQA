@@ -14,8 +14,14 @@ function Register() {
 
   const registerSignIn = (e) => {
     e.preventDefault();
-
-   console.log("Create new user");
+    const user = {
+      username : username,
+      email : email,
+      password : password,
+      bio:bio
+    };
+    axios.post('http://localhost:8000/sign-up', user)
+    .then(response => console.log(response.data));
   };
   return (
     <div className="login">

@@ -63,7 +63,7 @@ function Login() {
               <small>Forgot Password?</small>
               <button onClick={handleSignIn}>Login</button>
             </div>
-            {<button onClick={registerSignIn}><Link to="/signup">New Account</Link></button>}
+            {<button><Link to="/signup">New Account</Link></button>}
           </div>
         </div>
         <div className="login__lang">
