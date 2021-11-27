@@ -1,22 +1,16 @@
 import React, { useState } from "react";
-import "./login.css";
+import "./register.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import axios from 'axios';
 import { Link } from "react-router-dom";
 
-
-function Login() {
+function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const signIn = () => {
-    console.log("SignIn");
-  };
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
-
-    console.log("Now sining in");
-  };
+  const [passAgain, setpassAgain] = useState("");
+  const [username,setusername] = useState("");
+  const [bio,setbio] = useState("");
+  
 
   const registerSignIn = (e) => {
     e.preventDefault();
@@ -38,7 +32,7 @@ function Login() {
         <div className="login__auth">
           <div className="login__emailPass">
             <div className="login__label">
-              <h2>Login</h2>
+              <h2>Register</h2>
             </div>
             <div className="login__inputFields">
               <div className="login__inputField">
@@ -51,19 +45,43 @@ function Login() {
               </div>
               <div className="login__inputField">
                 <input
+                  value={username}
+                  onChange={(e) => setusername(e.target.value)}
+                  type="text"
+                  placeholder="Username"
+                />
+              </div>
+              <div className="login__inputField">
+                <input
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder="Password"
                 />
               </div>
+              <div className="login__inputField">
+                <input
+                  value={passAgain}
+                  onChange={(e) => setpassAgain(e.target.value)}
+                  type="password"
+                  placeholder="Enter Password again"
+                />
+              </div>
               
+              <div className="login_bio">
+                <textarea rows="4" cols="66"
+                  value={bio}
+                  onChange={(e) => setbio(e.target.value)}
+                  type="password"
+                  placeholder="Enter your Bio here. It helps people find you !!"
+                />
+              </div>
             </div>
             <div className="login__forgButt">
-              <small>Forgot Password?</small>
-              <button onClick={handleSignIn}>Login</button>
+            {<Link to="/login"><small>Already have a account? Login here</small></Link>}
+              
             </div>
-            {<button onClick={registerSignIn}><Link to="/signup">New Account</Link></button>}
+            <button onClick={registerSignIn}>Register</button>
           </div>
         </div>
         <div className="login__lang">
@@ -85,4 +103,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
