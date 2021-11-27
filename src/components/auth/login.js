@@ -3,7 +3,6 @@ import "./login.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { Link } from "react-router-dom";
 
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +22,7 @@ function Login() {
 
    console.log("Create new user");
   };
+  
   return (
     <div className="login">
       <div className="login__container">
