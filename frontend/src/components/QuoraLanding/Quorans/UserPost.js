@@ -10,8 +10,6 @@ import { useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
 
-// import db from "../firebase";
-// import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "react-responsive-modal/styles.css";

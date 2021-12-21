@@ -9,7 +9,6 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import CloseIcon from "@material-ui/icons/Close";
-import LanguageIcon from "@material-ui/icons/Language";
 
 import "./QHeader.css";
 import { Avatar, Button, Input } from "@material-ui/core";
@@ -101,9 +100,9 @@ function QHeader() {
             <div onClick = {() => window.location.href = '/allUsers'} className="qHeader__icon">
             <PeopleAltOutlinedIcon />
             </div>
-            <div onClick = {() => window.location.href = '/notifications'} className="qHeader__icon">
+            {/* <div onClick = {() => window.location.href = '/notifications'} className="qHeader__icon">
             <NotificationsOutlinedIcon />
-            </div>
+            </div> */}
         </div>
         <div className="qHeader__input">
             <SearchIcon />
@@ -122,7 +121,7 @@ function QHeader() {
                 }
             />
             </div>
-            <LanguageIcon />
+
             <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
             <Modal
             // isOpen={IsmodalOpen}
