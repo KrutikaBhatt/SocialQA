@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./Login.css";
 import { login, register } from "../../Action/User";
-import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 function Login() {
@@ -50,7 +49,7 @@ function Login() {
           />
         </div>
         <div className="login__desc">
-          <p>A Place to Share knowledge and better understand the world</p>
+          <p>A Place to Share knowledge and better understand the world !!</p>
         </div>
         <div className="login__auth">
           <div className="login__emailPass">
@@ -74,7 +73,6 @@ function Login() {
                   placeholder="Password"
                 />
               </div>
-              
             </div>
             {/* <div className="login__forgButt">
               <small>Forgot Password?</small>
@@ -83,15 +81,13 @@ function Login() {
             <button onClick={registerSignIn}>New Account</button>
           </div> */}
           <div className="login__forgButt">
-              <small>Forgot Password?</small>
-              <button onClick={handleControlUser}>{user ? 'Register' : 'Login'}</button>
+              <button style={{marginRight: 10}} onClick={handleControlUser}>{user ? 'Register' : 'Login'}</button>
             </div>
             <p style ={{
               fontSize: "13px",
               color: "#777",
               cursor: "pointer"
             }} onClick = {() => setUser(!user)}>{!user ? 'New user | Register' : 'Already registered | Login'}</p>
-            {/* <button onClick={registerSignIn}>Register</button> */}
           </div>
         </div>
         <div className="login__lang">
