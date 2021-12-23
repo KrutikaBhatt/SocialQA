@@ -102,10 +102,13 @@
   display: flex;
   justify-content: space-around;
   border-radius: 33px;
+  padding-left:12px;
+  color:#353333;
 }
 .post__footerAction > .MuiSvgIcon-root {
   color: gray;
-  margin-right: 40px;
+  margin-right: 15px;
+  margin-left: 2.5px;
   cursor: pointer;
 }
 

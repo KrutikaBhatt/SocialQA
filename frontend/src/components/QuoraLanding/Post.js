@@ -168,8 +168,8 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
         }} src={imageUrl} alt="" />
         <div className="post__footer">
         <div className="post__footerAction">
-          <ArrowUpwardOutlinedIcon />
-          <ArrowDownwardOutlinedIcon />
+          23<ArrowUpwardOutlinedIcon />
+          4<ArrowDownwardOutlinedIcon />
         </div>
 
         <ChatBubbleOutlineOutlinedIcon />

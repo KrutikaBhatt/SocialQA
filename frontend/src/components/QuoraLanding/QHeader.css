@@ -19,8 +19,8 @@
 }
 
 .qHeader__logo > img {
-  margin-right: 20px;
-  height: 30px !important;
+  margin-right: 10px;
+  height: 50px !important;
   object-fit: contain;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .qHeader__icon:hover > .MuiSvgIcon-root {
-  color: #000;
+  color: #482673;
 }
 
 /* .qHeader__icons {
