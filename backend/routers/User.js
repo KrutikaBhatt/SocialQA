@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const isAuthenticated = require("../controller/requestAuthenticator");
-// const { sendMail } = require("../Utils/Email");
-// const { getFilePath } = require("../Utils/File");
 
 router.get("/", async (req, res) => {
   // console.log(isAuthenticated);

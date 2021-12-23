@@ -7,15 +7,18 @@ const QuestionSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  // userDetails: {
-  //   type: Object,
-  //   required: true,
-  // },
+  upvote: {
+    type: Number,
+    default: 0
+  },
+  downvote: {
+    type: Number,
+    default: 0
+  },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Users"
   },
-  // allAnswers: [answerSchema],
   answers: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Answers"

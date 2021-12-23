@@ -101,7 +101,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
       <div className="post__info">
         <Avatar
           src={
-            "https://i.postimg.cc/FsLV3Qq7/c3a1f7f2b9b54019b0822b116243a3fa.png"
+            "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
           }
         />
         <h4>{users?.name ? users?.name : users?.email}</h4>
@@ -172,12 +172,11 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
           <ArrowDownwardOutlinedIcon />
         </div>
 
-        <RepeatOutlinedIcon />
         <ChatBubbleOutlineOutlinedIcon />
-        <div className="post__footerLeft">
+        {/* <div className="post__footerLeft">
           <ShareOutlined />
           <MoreHorizOutlined />
-        </div>
+        </div> */}
       </div>
         <p style = {{
           color: "rgba(0,0,0,0.5)",
@@ -209,7 +208,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
                 color: "#888"
               }} className = 'post-answered'>
                 <Avatar src = {
-                  "https://i.postimg.cc/FsLV3Qq7/c3a1f7f2b9b54019b0822b116243a3fa.png"
+                  "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
                 } />
                 <div style = {{
                   margin: "0px 10px"

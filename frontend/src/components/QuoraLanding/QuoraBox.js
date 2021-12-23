@@ -2,7 +2,7 @@ import { Avatar } from "@material-ui/core";
 import React from "react";
 import "./QuoraBox.css";
 
-export default function QuorBox() {
+export default function QuoraBox() {
   // const user = useSelector(selectUser);
 
   return (
@@ -10,7 +10,7 @@ export default function QuorBox() {
       <div className="quoraBox__info">
         <Avatar
           src={
-            "https://i.postimg.cc/FsLV3Qq7/c3a1f7f2b9b54019b0822b116243a3fa.png"
+            "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
           }
           className="quoraBox__infoAvatar"
         />

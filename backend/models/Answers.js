@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const AnswerSchema = new mongoose.Schema({
-  createdAt: Date,
   answer: String,
   questionId: {
     type: mongoose.Schema.Types.ObjectId,

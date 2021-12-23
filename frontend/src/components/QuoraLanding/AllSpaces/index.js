@@ -16,8 +16,8 @@ function Index() {
         <QHeader />
         <div className = 'top-box'>
             <div className = 'top-box-container'>
-            <h3>Welcome to Quora!</h3>
-            <p>Follow Quorans to explore your interestes on Quora</p>
+            <h3>Welcome to SocialQA !</h3>
+            <p>Follow Quorans to explore your interestes on SocialQA</p>
             </div>
             <div className = 'main-content'>
                 <h2>Discover All Quorans</h2>
@@ -31,7 +31,7 @@ function Index() {
                             <img src = 'https://qphs.fs.quoracdn.net/main-custom-tc-1932347-320x64-cpowfrcsrqmcaddukabeezznabfqjtou.jpeg' alt ='converImage' />
                         </div>
                         <div className = 'user-profile-img'>
-                            <img src="https://qphs.fs.quoracdn.net/main-thumb-ti-1932347-100-zmrqrduiusnaxdjolxgirondyjupjrke.jpeg" alt ='profileImage' />
+                            <img src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt ='profileImage' />
                         </div>
                         <h3>{_user.name? _user.name : String(_user.email).split('@')[0]  }</h3>
                         <p>{_user.email}</p>

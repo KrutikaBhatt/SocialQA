@@ -18,11 +18,11 @@ function AllSpaces() {
                 </div>
                 <div className = 'allUsers'>
                     <div className = 'allUserStrip'>
-                        <img src = 'https://qphs.fs.quoracdn.net/main-thumb-ti-1945362-100-rwsfgpahztatgtaybdknosepkylwwgkg.jpeg' alt ='' />
+                        <img src = 'https://cdn-icons.flaticon.com/png/128/4785/premium/4785849.png?token=exp=1640246061~hmac=4146ded321c71964e93d694983e77f29' alt ='' />
                         <div className = 'content'>
-                            <p>Teens😂😂 l💓ve</p>
+                            <p>Movie Discussions</p>
                             <small>14K followers</small>
-                            <small>fun 🤣🤣 to make life happy....💓😘😘💓</small>
+                            <small>Discuss different movies and theories</small>
                         </div>
                     </div>
                     <div className = 'allUserStrip'>

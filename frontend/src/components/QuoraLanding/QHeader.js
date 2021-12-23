@@ -117,7 +117,7 @@ function QHeader() {
                 // user.photo
                 //     ? user.photo
                 //     : 
-                "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+                "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
                 }
             />
             </div>
@@ -154,7 +154,7 @@ function QHeader() {
               <Avatar
                 className="avatar"
                 src={
-                  "https://i.postimg.cc/FsLV3Qq7/c3a1f7f2b9b54019b0822b116243a3fa.png"
+                  "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
                 }
               />
               {/* <img src="http://tinygraphs.com/squares/helloworld" /> */}
