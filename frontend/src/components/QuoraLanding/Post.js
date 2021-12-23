@@ -3,14 +3,10 @@ import React, { useState } from "react";
 import "./Post.css";
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
-import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
-import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
-import {MoreHorizOutlined, ShareOutlined } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
 
-// import db from "../firebase";
 // import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -89,14 +85,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
     <div
       key={key}
       className="post"
-      // onClick={() =>
-      //   // dispatch(
-      //   //   setQuestionInfo({
-      //   //     questionId: Id,
-      //   //     questionName: question,
-      //   //   })
-      //   // )
-      // }
     >
       <div className="post__info">
         <Avatar
@@ -172,11 +160,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
           4<ArrowDownwardOutlinedIcon />
         </div>
 
-        <ChatBubbleOutlineOutlinedIcon />
-        {/* <div className="post__footerLeft">
-          <ShareOutlined />
-          <MoreHorizOutlined />
-        </div> */}
       </div>
         <p style = {{
           color: "rgba(0,0,0,0.5)",

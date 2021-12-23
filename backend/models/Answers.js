@@ -10,10 +10,6 @@ const AnswerSchema = new mongoose.Schema({
     type: Object,
     required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-  },
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model("Answers", AnswerSchema);

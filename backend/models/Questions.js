@@ -3,10 +3,6 @@ const mongoose = require("mongoose");
 const QuestionSchema = new mongoose.Schema({
   questionName: String,
   questionUrl: String,
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-  },
   upvote: {
     type: Number,
     default: 0
@@ -23,6 +19,6 @@ const QuestionSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Answers"
   }
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model("Questions", QuestionSchema);
