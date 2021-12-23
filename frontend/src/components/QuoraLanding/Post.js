@@ -101,7 +101,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
       <div className="post__info">
         <Avatar
           src={
-            "https://i.postimg.cc/FsLV3Qq7/c3a1f7f2b9b54019b0822b116243a3fa.png"
+            "https://img.favpng.com/25/13/19/samsung-galaxy-a8-a8-user-login-telephone-avatar-png-favpng-dqKEPfX7hPbc6SMVUCteANKwj.jpg"
           }
         />
         <h4>{users?.name ? users?.name : users?.email}</h4>
@@ -168,8 +168,8 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
         }} src={imageUrl} alt="" />
         <div className="post__footer">
         <div className="post__footerAction">
-          <ArrowUpwardOutlinedIcon />
-          <ArrowDownwardOutlinedIcon />
+          23<ArrowUpwardOutlinedIcon />
+          4<ArrowDownwardOutlinedIcon />
         </div>
 
         <RepeatOutlinedIcon />
@@ -209,7 +209,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
                 color: "#888"
               }} className = 'post-answered'>
                 <Avatar src = {
-                  "https://i.postimg.cc/FsLV3Qq7/c3a1f7f2b9b54019b0822b116243a3fa.png"
+                  "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png"
                 } />
                 <div style = {{
                   margin: "0px 10px"
