@@ -1,7 +1,7 @@
 {
-  "name": "quora-clone-2",
+  "name": "socialqa-2",
   "version": "1.1.0",
-  "description": "\"Fully responsive quora clone\"",
+  "description": "\"Fully responsive SocialQA Forum\"",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Code-With-Akky/quora-client.git"
+    "url": "git+https://github.com/KrutikaBhatt/SocialQA"
   },
   "author": "Code with akky",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Code-With-Akky/quora-client/issues"
+    "url": "https://github.com/KrutikaBhatt/SocialQA/issues"
   },
-  "homepage": "https://github.com/Code-With-Akky/quora-client#readme",
+  "homepage": "https://github.com/KrutikaBhatt/SocialQA#readme",
   "dependencies": {
     "@sweetalert2/theme-dark": "^5.0.5",
     "axios": "^0.21.4",

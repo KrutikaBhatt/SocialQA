@@ -1,10 +1,10 @@
 import React from "react";
-import Quora from "./Quora";
+import SocialQA from "./SocialQA";
 
 function Index() {
   return (
     <div>
-      <Quora />
+      <SocialQA />
     </div>
   );
 }

@@ -1,9 +1,9 @@
-.quora {
+.socialqa {
   width: 100%;
   min-width: fit-content;
 }
 
-.quora__contents {
+.socialqa__contents {
   display: flex;
   justify-content: center;
   padding: 40px 0;
@@ -12,7 +12,7 @@
   width: 100%;
 }
 
-.quora__content {
+.socialqa__content {
   display: flex;
   flex-direction: row;
   padding: 0px 10px;

@@ -1,10 +1,10 @@
 import React from 'react'
 import './AllUsers.css'
-import QHeader from './QHeader'
+import Header from './Header'
 
 function AllSpaces() {
     return (<>
-        <QHeader />
+        <Header />
         <div className = 'allUser'>
             <div className = 'allUser-container'>
                 <img width = {250} src = 'https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.empty_states.build_following_feed_darkmode.png-26-3fb93e1da358eb6e.png' alt = ''/>

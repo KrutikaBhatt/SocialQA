@@ -1,11 +1,11 @@
 import React from 'react'
-import QHeader from '../QHeader'
+import Header from '../Header'
 import UserFeed from './UserFeed'
 
 function Index() {
     return (
         <div className="quora">
-      <QHeader />
+      <Header />
       <div className="quora__contents">
         <div style = {{
           display: "flex",

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost/quora"
+const url = "mongodb://localhost/socialqa"
 
 module.exports.connect = () => {
   mongoose

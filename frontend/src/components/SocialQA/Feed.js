@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import QuoraBox from "./QuoraBox";
+import QABox from "./QABox";
 import "./Feed.css";
 import Post from "./Post";
 import axios from "axios";
@@ -24,7 +24,7 @@ function Feed() {
   }, []);
   return (
     <div className="feed">
-      <QuoraBox />
+      <QABox />
       {posts.map((_post) => (
         <Post
           key={_post._id}

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import QHeader from '../QHeader'
+import Header from '../Header'
 import './index.css'
 
 function Index() {
@@ -13,7 +13,7 @@ function Index() {
     }, [])
 
     return (<>
-        <QHeader />
+        <Header />
         <div className = 'top-box'>
             <div className = 'top-box-container'>
             <h3>Welcome to SocialQA !</h3>

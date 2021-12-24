@@ -1,16 +1,16 @@
 import React from "react";
 import Feed from "./Feed.js";
-import QHeader from "./QHeader";
-import "./Quora.css";
+import Header from "./Header";
+import "./SocialQA.css";
 import Sidebar from "./Sidebar";
 import Widget from "./Widget.js";
 
-function Quora() {
+function SocialQA() {
   return (
-    <div className="quora">
-      <QHeader />
-      <div className="quora__contents">
-        <div className="quora__content">
+    <div className="socialqa">
+      <Header />
+      <div className="socialqa__contents">
+        <div className="socialqa__content">
           <Sidebar />
           <Feed />
           <Widget />
@@ -20,4 +20,4 @@ function Quora() {
   );
 }
 
-export default Quora;
+export default SocialQA;

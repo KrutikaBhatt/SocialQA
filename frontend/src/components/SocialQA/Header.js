@@ -10,7 +10,7 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import CloseIcon from "@material-ui/icons/Close";
 
-import "./QHeader.css";
+import "./Header.css";
 import { Avatar, Button, Input } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 // import db, { auth } from "../firebase";
@@ -20,7 +20,7 @@ import axios from "axios";
 import { token } from "../../Utils/decodedToken";
 import { successModal } from "../../Utils/AlertModal";
 
-function QHeader() {
+function Header() {
   // const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -216,4 +216,4 @@ function QHeader() {
   );
 }
 
-export default QHeader;
+export default Header;
