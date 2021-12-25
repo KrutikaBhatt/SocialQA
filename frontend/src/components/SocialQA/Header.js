@@ -160,6 +160,17 @@ function Header() {
               {/* <img src="http://tinygraphs.com/squares/helloworld" /> */}
               {/* <p>{user?.disPlayName ? user?.disPlayName : user?.email} asked</p> */}
               <div className="modal__scope">
+              {/* <select name="dog-names" id="dog-names">
+                  <option value="Public">Public</option>
+                  <option value="Education">Education</option>
+                  <option value="Query">Query</option>
+                  <option value="Music">Music</option>
+                  <option value="Memes">Memes</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Movies">Movies</option>
+                  <option value="Bussiness">Bussiness</option>
+                  <option value="History">History</option>
+              </select> */}
                 <PeopleAltOutlinedIcon />
                 <p>Public</p>
                 <ExpandMore />

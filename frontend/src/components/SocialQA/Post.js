@@ -4,6 +4,7 @@ import "./Post.css";
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
@@ -28,6 +29,8 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
   const [answer, setAnswer] = useState("");
   const [getAnswers, setGetAnswers] = useState(answers);
   const [openAns, setOpenAns] = useState(false);
+  const loggedInUser = userLogin?.userInfo?.userId;
+  
   // console.log(answers)
 
   const Close = (
@@ -71,6 +74,20 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
         .catch(error =>{
           console.log(error);
         })
+  }
+
+  const handleDelete = async()=>{
+    if (window.confirm("This Post with be deleted permanently")) {
+      await axios.delete(`/api/questions/${questionId}`).then(resp =>{
+          console.log(resp.data);
+          window.location.reload();
+      })
+      .catch(error =>{
+          console.log(error);
+      })
+    } else {
+    console.log("Cancel deletion")
+    }
   }
   const handleAnswer = async (e) => {
     e.preventDefault();
@@ -123,6 +140,9 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
             <TimeAdded date={timestamp} />
           </small>
         )}
+        {(loggedInUser==users._id) && <>
+            <DeleteIcon style={{marginLeft:20,marginRight:5,color:'grey',cursor:'pointer'}} onClick={handleDelete}/>
+          </>}
       </div>
       <div className="post__body">
         <div className="post__question">
@@ -130,7 +150,8 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
           <button onClick={handleModal} className="post__btnAnswer">
             Answer
           </button>
-
+          
+          
           <Modal
             open={IsmodalOpen}
             onClose={() => setIsModalOpen(false)}
