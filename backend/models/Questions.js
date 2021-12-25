@@ -18,6 +18,10 @@ const QuestionSchema = new mongoose.Schema({
   answers: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Answers"
+  },
+  tags:{
+    type:String,
+    default:"Public"
   }
 }, {timestamps: true});
 

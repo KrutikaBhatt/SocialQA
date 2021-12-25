@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
         questionName: req.body.questionName,
         questionUrl: req.body.questionUrl,
         userId: req.body.userId,
+        tags : req.body.tag
       })
       .then(() => {
         res.status(201).send({

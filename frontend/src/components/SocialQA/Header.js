@@ -28,6 +28,7 @@ function Header() {
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
   const userLogin = useSelector((state) => state.userLogin);
+  const [Tag,setTag] = useState("Public");
 
   // console.log(userLogin?.userInfo?.userId);
 
@@ -53,7 +54,8 @@ function Header() {
       const body = {
         questionName: input,
         questionUrl: inputUrl,
-        userId: userLogin?.userInfo?.userId
+        userId: userLogin?.userInfo?.userId,
+        tag:Tag
       };
       await axios
         .post("/api/questions", body, config)
@@ -100,9 +102,7 @@ function Header() {
             <div onClick = {() => window.location.href = '/allUsers'} className="qHeader__icon">
             <PeopleAltOutlinedIcon />
             </div>
-            {/* <div onClick = {() => window.location.href = '/notifications'} className="qHeader__icon">
-            <NotificationsOutlinedIcon />
-            </div> */}
+           
         </div>
         <div className="qHeader__input">
             <SearchIcon />
@@ -160,8 +160,9 @@ function Header() {
               {/* <img src="http://tinygraphs.com/squares/helloworld" /> */}
               {/* <p>{user?.disPlayName ? user?.disPlayName : user?.email} asked</p> */}
               <div className="modal__scope">
-              {/* <select name="dog-names" id="dog-names">
-                  <option value="Public">Public</option>
+           
+              <select name="tags" id="questionTags" className="custom-select" style={{width:130}} onChange={(e) => setTag(e.target.value)}> 
+                  <option value="Public" style={{height:20}}>Public</option>
                   <option value="Education">Education</option>
                   <option value="Query">Query</option>
                   <option value="Music">Music</option>
@@ -170,10 +171,7 @@ function Header() {
                   <option value="Movies">Movies</option>
                   <option value="Bussiness">Bussiness</option>
                   <option value="History">History</option>
-              </select> */}
-                <PeopleAltOutlinedIcon />
-                <p>Public</p>
-                <ExpandMore />
+              </select>
               </div>
             </div>
             <div className="modal__Field">
