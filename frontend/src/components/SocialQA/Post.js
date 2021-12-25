@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./Post.css";
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
+import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
@@ -26,7 +27,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
   // const questionId = useSelector(selectQuestionId);
   const [answer, setAnswer] = useState("");
   const [getAnswers, setGetAnswers] = useState(answers);
-  const [openAns, setOpenAns] = useState(true);
+  const [openAns, setOpenAns] = useState(false);
   // console.log(answers)
 
   const Close = (
@@ -183,6 +184,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
           {UPVOTE}<ArrowUpwardOutlinedIcon onClick={UpvoteFunction}/>
           {DOWNVOTE}<ArrowDownwardOutlinedIcon onClick={downvoteFunction}/>
         </div>
+        <ChatBubbleOutlineOutlinedIcon style={{marginLeft:18}} onClick={()=>{setOpenAns(!openAns)}}/>
 
       </div>
         <p style = {{
@@ -199,6 +201,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
               
           {
             // answer comes here
+            openAns &&
             getAnswers.map((_answer) => (<>
             <div key={_answer._id} style = {{
               display: "flex",
