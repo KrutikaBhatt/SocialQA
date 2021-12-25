@@ -34,6 +34,8 @@ function Feed() {
           timestamp={_post.createdAt}
           users={_post.userDetails[0]}
           answers={_post.allAnswers}
+          upvote = {_post.upvote}
+          downvote = {_post.downvote}
         />
       ))}
     </div>

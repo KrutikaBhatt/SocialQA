@@ -146,5 +146,64 @@ router.get("/:id", async (req, res) => {
   })
 });
 
+router.put("/upvote/:qid",async(req,res) =>{
+  try {
+    
+    const id = req.params.qid;
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).send(`No post with this id - ${id}`);
+    }
+
+    const required_post = await questionDB.findById(id);
+    const updatePost = await questionDB.findByIdAndUpdate(id,{upvote : required_post.upvote+1},{new:true});
+
+    res.status(200).json(updatePost);
+  
+  } catch (error) {
+    consol.log(error);
+    res.status(500).send("Error occured");
+  }
+})
+
+
+router.put("/downvote/:qid",async(req,res) =>{
+  try {
+    
+    const id = req.params.qid;
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).send(`No post with this id - ${id}`);
+    }
+
+    const required_post = await questionDB.findById(id);
+    const updatePost = await questionDB.findByIdAndUpdate(id,{downvote : required_post.downvote+1},{new:true});
+
+    res.status(200).json(updatePost);
+  
+  } catch (error) {
+    consol.log(error);
+    res.status(500).send("Error occured");
+  }
+})
+
+
+
+router.delete("/:qid",async(req,res) =>{
+  try {
+    
+    const id = req.params.qid;
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).send(`No post with this id - ${id}`);
+    }
+
+    await questionDB.findByIdAndRemove(id);
+
+    res.json({ message: "Post deleted successfully." });
+  
+  } catch (error) {
+    consol.log(error);
+    res.status(500).send("Error occured");
+  }
+})
+
 
 module.exports = router;

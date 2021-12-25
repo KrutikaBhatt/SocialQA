@@ -17,15 +17,16 @@ import { token } from "../../Utils/decodedToken";
 import axios from "axios";
 import { errorModal, successModal } from "../../Utils/AlertModal";
 
-function Post({ questionId, key, question, imageUrl, timestamp, users, answers }) {
+function Post({ questionId, key, question, imageUrl, timestamp, users, answers,upvote,downvote }) {
 
   const userLogin = useSelector((state) => state.userLogin);
-
+  const [UPVOTE,setUpvote] = useState(upvote);
+  const [DOWNVOTE,setdownvote] = useState(downvote);
   const [IsmodalOpen, setIsModalOpen] = useState(false);
   // const questionId = useSelector(selectQuestionId);
   const [answer, setAnswer] = useState("");
   const [getAnswers, setGetAnswers] = useState(answers);
-
+  const [openAns, setOpenAns] = useState(true);
   // console.log(answers)
 
   const Close = (
@@ -47,6 +48,29 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
     console.log(questionId);
   };
 
+  const UpvoteFunction=async()=>{
+    await axios
+        .put(`/api/questions/upvote/${questionId}`)
+        .then((res) => {
+          console.log(res);
+          setUpvote(UPVOTE+1);
+        })
+        .catch(error =>{
+          console.log(error);
+        })
+  }
+
+  const downvoteFunction=async()=>{
+    await axios
+        .put(`/api/questions/downvote/${questionId}`)
+        .then((res) => {
+          console.log(res);
+          setdownvote(DOWNVOTE+1);
+        })
+        .catch(error =>{
+          console.log(error);
+        })
+  }
   const handleAnswer = async (e) => {
     e.preventDefault();
 
@@ -156,8 +180,8 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
         }} src={imageUrl} alt="" />
         <div className="post__footer">
         <div className="post__footerAction">
-          23<ArrowUpwardOutlinedIcon />
-          4<ArrowDownwardOutlinedIcon />
+          {UPVOTE}<ArrowUpwardOutlinedIcon onClick={UpvoteFunction}/>
+          {DOWNVOTE}<ArrowDownwardOutlinedIcon onClick={downvoteFunction}/>
         </div>
 
       </div>
@@ -176,7 +200,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers }
           {
             // answer comes here
             getAnswers.map((_answer) => (<>
-            <div style = {{
+            <div key={_answer._id} style = {{
               display: "flex",
               flexDirection: "column",
               width: "100%",
