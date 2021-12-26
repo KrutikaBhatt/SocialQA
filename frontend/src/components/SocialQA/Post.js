@@ -57,7 +57,10 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
         .put(`/api/questions/upvote/${questionId}`)
         .then((res) => {
           console.log(res);
-          setUpvote(UPVOTE+1);
+          if(res.status === 201)
+            alert("Post has already been upvoted !!")
+          else
+            setUpvote(UPVOTE+1)
         })
         .catch(error =>{
           console.log(error);
@@ -69,7 +72,10 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
         .put(`/api/questions/downvote/${questionId}`)
         .then((res) => {
           console.log(res);
-          setdownvote(DOWNVOTE+1);
+          if(res.status === 201)
+            alert("Post has already been downvoted !!")
+          else
+            setdownvote(DOWNVOTE+1);
         })
         .catch(error =>{
           console.log(error);

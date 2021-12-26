@@ -104,9 +104,11 @@ router.put("/upvote/:qid",async(req,res) =>{
         return res.status(404).send(`No post with this id - ${id}`);
     }
 
-    const required_post = await questionDB.findById(id);
-    const updatePost = await questionDB.findByIdAndUpdate(id,{upvote : required_post.upvote+1},{new:true});
-
+    const requiredPost = await questionDB.findById(id);
+    if(requiredPost.hasUpvoted){
+      return res.status(201).send(`Post has already been upvoted`);
+    }
+    const updatePost = await questionDB.findByIdAndUpdate(id,{$inc: {'upvote':1}, hasUpvoted: true},{new:true});
     res.status(200).json(updatePost);
   
   } catch (error) {
@@ -114,7 +116,6 @@ router.put("/upvote/:qid",async(req,res) =>{
     res.status(500).send("Error occured");
   }
 })
-
 
 router.put("/downvote/:qid",async(req,res) =>{
   try {
@@ -124,8 +125,11 @@ router.put("/downvote/:qid",async(req,res) =>{
         return res.status(404).send(`No post with this id - ${id}`);
     }
 
-    const required_post = await questionDB.findById(id);
-    const updatePost = await questionDB.findByIdAndUpdate(id,{downvote : required_post.downvote+1},{new:true});
+    const requiredPost = await questionDB.findById(id);
+    if(requiredPost.hasDownvoted){
+      return res.status(201).send(`Post has already been downvoted`);
+    }
+    const updatePost = await questionDB.findByIdAndUpdate(id,{$inc: {'downvote':1}, hasDownvoted: true},{new:true});
 
     res.status(200).json(updatePost);
   
@@ -134,7 +138,6 @@ router.put("/downvote/:qid",async(req,res) =>{
     res.status(500).send("Error occured");
   }
 })
-
 
 
 router.delete("/:qid",async(req,res) =>{
@@ -189,4 +192,5 @@ router.get("/find/:name",async(req,res)=>{
     return res.status(500).send("Some Internal error occurred");
   }
 })
+
 module.exports = router;

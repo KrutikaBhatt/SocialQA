@@ -7,9 +7,17 @@ const QuestionSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  hasUpvoted: {
+    type: Boolean,
+    default: false
+  },
   downvote: {
     type: Number,
     default: 0
+  },
+  hasDownvoted: {
+    type: Boolean,
+    default: false
   },
   userId: {
     type: mongoose.Schema.Types.ObjectId,
