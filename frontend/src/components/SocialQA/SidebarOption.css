@@ -23,7 +23,7 @@
   font-size: medium;
   margin-left: 20px;
 }
-.sidebarOption > p {
+.sidebarOption > p >a {
   margin-left: 10px;
   color: gray;
   font-weight: 400;

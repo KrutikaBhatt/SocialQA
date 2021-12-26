@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const url = "mongodb+srv://skd7257:TCToCxok8d0Yp1vF@cluster0.kgeey.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
+const url = "mongodb://localhost/socialqa";
 module.exports.connect = () => {
   mongoose
     .connect(url, {

@@ -42,58 +42,7 @@ router.get("/", async (req, res) => {
     message: "Error in retrieving blogs",
     error: "Bad Request",
   };
-  // questionDB
-  //   .aggregate([
-  //     {
-  //       $lookup: {
-  //         from: "answers",
-  //         let: { questionId: "$_id" },
-  //         pipeline: [
-  //           {
-  //             $match: {
-  //               expr: {
-  //                 $eq: ["$questionId", "$$questionId"],
-  //               },
-  //             },
-  //           },
-  //           {
-  //             $project: {
-  //               _id: 1,
-  //               answer: 1,
-  //               userDetails: 1,
-  //               createdAt: 1,
-  //             },
-  //           },
-  //         ],
-  //         as: "answers",
-  //       },
-  //     },
-  //     {
-  //       $unwind: {
-  //         path: "$answers",
-  //         preserveNullAndEmptyArrays: true,
-  //       },
-  //     },
-  //     {
-  //       $project: {
-  //         __v: 0
-  //         // _id: 1,
-  //         // questionName: 1,
-  //         // questionUrl: 1,
-  //         // userDetails: 1,
-  //         // createdAt: 1,
-  //         // allAnswers: 1,
-  //         // answers: 1,
-  //       },
-  //     },
-  //   ])
-  // questionDB.find({}).populate('answers').exec().then((doc) => {
-  //         res.status(200).send(doc);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(400).send(error);
-  //   });
+ 
   questionDB.aggregate([
     {
       $lookup: {
@@ -206,5 +155,38 @@ router.delete("/:qid",async(req,res) =>{
   }
 })
 
+router.get("/find/:name",async(req,res)=>{
+  try {
+    const error = {
+      message: "Error in retrieving blogs",
+      error: "Bad Request",
+    };
+   
+    questionDB.aggregate([
+      {$match:{tags:req.params.name}},
+      {
+        $lookup: {
+            from: "answers", // collection to join
+            localField: "_id",//field from the input documents
+            foreignField: "questionId",//field from the documents of the "from" collection
+            as: "allAnswers"// output array field
+        }
+    },
+    {
+      $lookup: {
+          from: "users", // collection to join
+          localField: "userId",//field from the input documents
+          foreignField: "_id",//field from the documents of the "from" collection
+          as: "userDetails"// output array field
+      }
+  }
+    ]).exec().then((doc) => {
+      res.status(200).send(doc)
+    })
 
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send("Some Internal error occurred");
+  }
+})
 module.exports = router;

@@ -10,6 +10,7 @@ import { logout } from "./Action/User";
 import AllSpaces from "./components/SocialQA/AllUser";
 import Socials from './components/SocialQA/Socials'
 import AllUsers from './components/SocialQA/AllSpaces'
+import SideBarSpaces from './components/SocialQA/SidebarSpaces'
 // import { decodeToken, isExpired } from "react-jwt";
 // import myDecodedToken from "./Utils/decodedToken";
 
@@ -93,6 +94,7 @@ function App() {
             <PrivateRoute exact path = '/allSpaces' component = {AllSpaces} />
             <PrivateRoute exact path = '/myQuestions' component = {Socials} />
             <PrivateRoute exact path = '/allUsers' component = {AllUsers} />
+            <Route exact path = '/myspace/:name' component={SideBarSpaces} />
             <Route exact path="/auth" component={Auth} />
           </main>
         </Switch>
