@@ -33,7 +33,9 @@ $ npm install       // npm install packages
 $ npm audit fix       // npm audit fix missing packages
 Click on option Split   // Split the terminal
 $ cd frontend   // go to frontend folder in one terminal
+$ npm install       // npm install packages in frontend
 $ cd backend   // go to backend folder in another terminal
+$ npm install       // npm install packages in backend
 $ npm start // in both the terminal 1st backend and then frontend
 ```
 
