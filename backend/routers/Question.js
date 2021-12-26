@@ -108,6 +108,11 @@ router.put("/upvote/:qid",async(req,res) =>{
     if(requiredPost.hasUpvoted){
       return res.status(201).send(`Post has already been upvoted`);
     }
+    else if(requiredPost.hasDownvoted){
+      const updatePost = await questionDB.findByIdAndUpdate(id,{$inc: {'upvote':1}, hasUpvoted: true, 
+    hasDownvoted: false, $inc: {'downvote':-1}},{new:true});
+      return res.status(202).json(updatePost)
+    }
     const updatePost = await questionDB.findByIdAndUpdate(id,{$inc: {'upvote':1}, hasUpvoted: true},{new:true});
     res.status(200).json(updatePost);
   
@@ -128,6 +133,11 @@ router.put("/downvote/:qid",async(req,res) =>{
     const requiredPost = await questionDB.findById(id);
     if(requiredPost.hasDownvoted){
       return res.status(201).send(`Post has already been downvoted`);
+    }
+    else if(requiredPost.hasUpvoted){
+      const updatePost = await questionDB.findByIdAndUpdate(id,{$inc: {'upvote':-1}, hasUpvoted: false, 
+    hasDownvoted: true, $inc: {'downvote':1}},{new:true});
+      return res.status(202).json(updatePost)
     }
     const updatePost = await questionDB.findByIdAndUpdate(id,{$inc: {'downvote':1}, hasDownvoted: true},{new:true});
 

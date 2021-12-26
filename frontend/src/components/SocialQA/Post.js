@@ -59,6 +59,10 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
           console.log(res);
           if(res.status === 201)
             alert("Post has already been upvoted !!")
+          else if(res.status === 202){
+            setdownvote(DOWNVOTE-1)
+            setUpvote(UPVOTE+1)
+          }
           else
             setUpvote(UPVOTE+1)
         })
@@ -74,6 +78,10 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
           console.log(res);
           if(res.status === 201)
             alert("Post has already been downvoted !!")
+          else if(res.status === 202){
+            setUpvote(UPVOTE-1);
+            setdownvote(DOWNVOTE+1);
+          }
           else
             setdownvote(DOWNVOTE+1);
         })
