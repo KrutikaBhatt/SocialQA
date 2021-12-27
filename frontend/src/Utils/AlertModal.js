@@ -84,7 +84,6 @@ const confirmModalError = (title, pathname) => {
 
 const confirmModal = (title, mode, keyPair) => {
     Swal.fire({
-        // title: 'Are you sure?',
         text: title,
         icon: 'success',
         showCancelButton: true,

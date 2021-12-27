@@ -5,7 +5,7 @@ import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
 import DeleteIcon from '@material-ui/icons/Delete';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
 
@@ -18,7 +18,7 @@ import { token } from "../../Utils/decodedToken";
 import axios from "axios";
 import { errorModal, successModal } from "../../Utils/AlertModal";
 
-function Post({ questionId, key, question, imageUrl, timestamp, users, answers,upvote,downvote }) {
+function Post({ questionId, key, question, imageUrl, timestamp, users, answers, upvote, downvote }) {
 
   const userLogin = useSelector((state) => state.userLogin);
   const [UPVOTE,setUpvote] = useState(upvote);
@@ -99,6 +99,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
     console.log("Cancel deletion")
     }
   }
+  
   const handleAnswer = async (e) => {
     e.preventDefault();
 

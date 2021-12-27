@@ -1,11 +1,10 @@
 import { Avatar } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../Post.css";
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
-import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
-import { MoreHorizOutlined, ShareOutlined } from "@material-ui/icons";
+import DeleteIcon from '@material-ui/icons/Delete';
 import { useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
@@ -17,14 +16,18 @@ import CloseIcon from "@material-ui/icons/Close";
 import TimeAdded from "../../../Utils/timeAgo";
 import { token } from "../../../Utils/decodedToken";
 import axios from "axios";
+import { errorModal, successModal } from "../../../Utils/AlertModal";
 
-function Post({ questionId, key, question, imageUrl, timestamp, users, answers, length }) {
+function Post({ questionId, key, question, imageUrl, timestamp, users, answers, upvote, downvote}) {
   
   const userLogin = useSelector((state) => state.userLogin);
+  const [UPVOTE,setUpvote] = useState(upvote);
+  const [DOWNVOTE,setdownvote] = useState(downvote);
   const [IsmodalOpen, setIsModalOpen] = useState(false);
   const [answer, setAnswer] = useState("");
-  const [getAnswers] = useState(answers);
-
+  const [getAnswers, setGetAnswers] = useState(answers);
+  const [openAns, setOpenAns] = useState(false);
+  const loggedInUser = userLogin?.userInfo?.userId;
 
   const Close = (
     <CloseIcon
@@ -44,6 +47,58 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
     setIsModalOpen(true);
     console.log(questionId);
   };
+
+  const UpvoteFunction=async()=>{
+    await axios
+        .put(`/api/questions/upvote/${questionId}`)
+        .then((res) => {
+          console.log(res);
+          if(res.status === 201)
+            alert("Post has already been upvoted !!")
+          else if(res.status === 202){
+            setdownvote(DOWNVOTE-1)
+            setUpvote(UPVOTE+1)
+          }
+          else
+            setUpvote(UPVOTE+1)
+        })
+        .catch(error =>{
+          console.log(error);
+        })
+  }
+
+  const downvoteFunction=async()=>{
+    await axios
+        .put(`/api/questions/downvote/${questionId}`)
+        .then((res) => {
+          console.log(res);
+          if(res.status === 201)
+            alert("Post has already been downvoted !!")
+          else if(res.status === 202){
+            setUpvote(UPVOTE-1);
+            setdownvote(DOWNVOTE+1);
+          }
+          else
+            setdownvote(DOWNVOTE+1);
+        })
+        .catch(error =>{
+          console.log(error);
+        })
+  }
+
+  const handleDelete = async()=>{
+    if (window.confirm("This Post with be deleted permanently")) {
+      await axios.delete(`/api/questions/${questionId}`).then(resp =>{
+          console.log(resp.data);
+          window.location.reload();
+      })
+      .catch(error =>{
+          console.log(error);
+      })
+    } else {
+    console.log("Cancel deletion")
+    }
+  }
 
   const handleAnswer = async (e) => {
     e.preventDefault();
@@ -69,30 +124,21 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
         .post(`/api/answers`, body, config)
         .then((res) => {
           console.log(res.data);
-          alert('Answer added succesfully')
+          successModal('Answer added successfully')
           setIsModalOpen(false)
-          window.location.href = '/'
+          // window.location.href = '/'
         })
         .catch((err) => {
           console.log(err);
+          errorModal('Error while adding question')
         });
     }
   };
-  return (<>
-  {
-      length !== 0 ? (<>
-      <div
-      key={key}
-      className="post"
-      // onClick={() =>
-      //   // dispatch(
-      //   //   setQuestionInfo({
-      //   //     questionId: Id,
-      //   //     questionName: question,
-      //   //   })
-      //   // )
-      // }
-    >
+  return (
+  <div
+    key={key}
+    className="post"
+  >
       <div className="post__info">
         <Avatar
           src={
@@ -105,6 +151,9 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
             <TimeAdded date={timestamp} />
           </small>
         )}
+        {(loggedInUser==users._id) && <>
+            <DeleteIcon style={{marginLeft:20,marginRight:5,color:'grey',cursor:'pointer'}} onClick={handleDelete}/>
+          </>}
       </div>
       <div className="post__body">
         <div className="post__question">
@@ -158,16 +207,11 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
         }} src={imageUrl} alt="" />
         <div className="post__footer">
         <div className="post__footerAction">
-          <ArrowUpwardOutlinedIcon />
-          <ArrowDownwardOutlinedIcon />
+          {UPVOTE}<ArrowUpwardOutlinedIcon onClick={UpvoteFunction}/>
+          {DOWNVOTE}<ArrowDownwardOutlinedIcon onClick={downvoteFunction}/>
         </div>
-
-        <RepeatOutlinedIcon />
-        <ChatBubbleOutlineOutlinedIcon />
-        <div className="post__footerLeft">
-          <ShareOutlined />
-          <MoreHorizOutlined />
-        </div>
+        <ChatBubbleOutlineOutlinedIcon style={{marginLeft:18}} onClick={()=>{setOpenAns(!openAns)}}/>
+        
       </div>
         <p style = {{
           color: "rgba(0,0,0,0.5)",
@@ -183,6 +227,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
               
           {
             // answer comes here
+            openAns &&
             getAnswers.map((_answer) => (<>
             <div style = {{
               display: "flex",
@@ -225,16 +270,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
       </div>
       
     </div>
-      </>) : (<>
-      <img style = {{
-          borderRadius: "10px",
-          boxShadow: '2px 2px 12px lightgray'
-      }} width = {400} src = 'https://image.freepik.com/free-vector/empty-concept-illustration_114360-1188.jpg' alt = 'no question' />
-      </>)
-      }
-  </>
-      
-    
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Feed.css";
-import Post from "./UserPost";
+import Post from "../Post";
 import axios from "axios";
 import { token } from "../../../Utils/decodedToken";
 import {useSelector} from 'react-redux'
@@ -47,7 +47,8 @@ function UserFeed() {
           timestamp={_post.createdAt}
           users={_post.userDetails[0]}
           answers={_post.allAnswers}
-          length = {posts.length}
+          upvote = {_post.upvote}
+          downvote = {_post.downvote}
         />
       ))}
     </div>

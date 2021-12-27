@@ -156,10 +156,6 @@ export const validateToken = (token) => async (dispatch) => {
           type: USER_VALIDATE_SUCCESS,
           payload: res.data,
         });
-        // dispatch({
-        //   type: USER_LOGIN_SUCCESS,
-        //   payload: res.data,
-        // });
       })
       .catch((error) => {
         dispatch({
