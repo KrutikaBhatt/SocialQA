@@ -13,9 +13,6 @@ No more hand-raising, microphones, or wasting time on off topic questions..
 $ git clone https://github.com/KrutikaBhatt/SocialQA
 $ npm init
 ```
-
-# Isagenix
-
 ## Prerequisites
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
 - [Node](https://nodejs.org/en/download/) ^14.0.0
