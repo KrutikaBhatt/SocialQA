@@ -1,14 +1,12 @@
 <h1 align="center">
-🌐 SOCIALQA
+SOCIALQA
 </h1>
-<p align="center">
-MongoDB, Expressjs, React/Redux, Nodejs
-</p>
+
 
 > SOCIALQA is a fullstack implementation in MERN [MongoDB, Expressjs, React/Redux, Nodejs] and a simple and powerful way to know what questions your audience has and which are most important to the entire group.
 No more hand-raising, microphones, or wasting time on off topic questions..
 
-MERN stack is the idea of using Javascript/Node for fullstack web development.
+
 
 ## clone or download
 ```terminal
@@ -39,6 +37,25 @@ $ npm install       // npm install packages in backend
 $ npm start // in both the terminal 1st backend and then frontend
 ```
 
+## Functionalities
+
+1. Regstration and Login
+2. Asking Questions and provide a relevant link to the context
+3. Multiple Users can give answers to asked question.
+4. Users can give upvotes to relevent question and downvotes for unkown questions
+5. A user can see all the social Buddies on his portal
+6. A user is able to see all his feed.
+
+## Technologies used
+1. React JS and Node JS
+2. Express server and MongoDB
+3. VS Code as an Editor
+
+## Future Scope
+1. Dividing Questions into Categories
+2. Email verification for registration
+3. Users can join Multiple Communities: Spaces on the website relevant to them and their ideas.
+
 ## Standard
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
@@ -51,6 +68,3 @@ $ npm start // in both the terminal 1st backend and then frontend
 [KrutikaBhatt](https://github.com/KrutikaBhatt),
 [Aayush-Chheda](https://github.com/Aayush-Chheda),
 [shubhamdathia7257](https://github.com/shubhamdathia7257)
-
-### License
-[ISC]
