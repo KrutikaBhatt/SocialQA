@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
     await questionDB
       .create({
         questionName: req.body.questionName,
-        questionUrl: req.body.questionUrl,
+        questionDesc: req.body.questionDesc,
         userId: req.body.userId,
         tags : req.body.tag
       })

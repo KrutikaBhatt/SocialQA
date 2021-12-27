@@ -43,7 +43,7 @@ function UserFeed() {
           key={_post._id}
           questionId={_post._id}
           question={_post.questionName}
-          imageUrl={_post.questionUrl}
+          questionDesc={_post.questionDesc}
           timestamp={_post.createdAt}
           users={_post.userDetails[0]}
           answers={_post.allAnswers}

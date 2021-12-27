@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from "react";
-import { useHistory, useParams,Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import QABox from "./QABox";
 import "./Feed.css";
 import Post from "./Post";
@@ -41,7 +41,7 @@ function SideBarSpaces() {
             key={_post._id}
             questionId={_post._id}
             question={_post.questionName}
-            imageUrl={_post.questionUrl}
+            questionDesc={_post.questionDesc}
             timestamp={_post.createdAt}
             users={_post.userDetails[0]}
             answers={_post.allAnswers}

@@ -18,7 +18,7 @@ import { token } from "../../../Utils/decodedToken";
 import axios from "axios";
 import { errorModal, successModal } from "../../../Utils/AlertModal";
 
-function Post({ questionId, key, question, imageUrl, timestamp, users, answers, upvote, downvote}) {
+function Post({ questionId, key, question, questionDesc, timestamp, users, answers, upvote, downvote}) {
   
   const userLogin = useSelector((state) => state.userLogin);
   const [UPVOTE,setUpvote] = useState(upvote);
@@ -126,7 +126,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
           console.log(res.data);
           successModal('Answer added successfully')
           setIsModalOpen(false)
-          // window.location.href = '/'
         })
         .catch((err) => {
           console.log(err);
@@ -192,7 +191,7 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
               ></ReactQuill>
             </div>
             <div className="modal__button">
-              <button className="cancle" onClick={() => setIsModalOpen(false)}>
+              <button className="cancel" onClick={() => setIsModalOpen(false)}>
                 Cancel
               </button>
               <button type="sumbit" onClick={handleAnswer} className="add">
@@ -201,10 +200,13 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
             </div>
           </Modal>
         </div>
-        <img style = {{
+        <div style = {{
           width: "100%",
-          objectFit: "contain"
-        }} src={imageUrl} alt="" />
+          objectFit: "contain",
+          marginBottom: "15px"
+        }}>
+          {parse(questionDesc)}
+        </div>
         <div className="post__footer">
         <div className="post__footerAction">
           {UPVOTE}<ArrowUpwardOutlinedIcon onClick={UpvoteFunction}/>

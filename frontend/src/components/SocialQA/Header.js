@@ -3,7 +3,9 @@ import HomeIcon from "@material-ui/icons/Home";
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
 import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
 import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
-import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import "react-responsive-modal/styles.css";
 import SearchIcon from "@material-ui/icons/Search";
 
 import { Modal } from "react-responsive-modal";
@@ -38,6 +40,11 @@ function Header() {
     />
   );
 
+  const handleQuill = (value) => {
+    setInputUrl(value);
+  };
+
+
   const handleQuestion = async (e) => {
     e.preventDefault();
     const config = {
@@ -49,7 +56,7 @@ function Header() {
     if (input !== "") {
       const body = {
         questionName: input,
-        questionUrl: inputUrl,
+        questionDesc: inputUrl,
         userId: userLogin?.userInfo?.userId,
         tag:Tag
       };
@@ -177,30 +184,17 @@ function Header() {
                 }}
                 className="modal__fieldLink"
               >
-                {/* <Link /> */}
-                <input
-                  style={{
-                    width: "100%",
-                    margin: "5px 0",
-                    border: "1px solid lightgray",
-                    padding: "10px",
-                    outline: "2px solid #000",
-                  }}
-                  value={inputUrl}
-                  onChange={(e) => setInputUrl(e.target.value)}
-                  type="text"
-                  placeholder="Optional: inclue a link that gives context"
-                ></input>
-                {inputUrl !== "" && (
-                  <img style={{
-                    height: "40vh",
-                    objectFit: "contain"
-                  }} src={inputUrl} alt=""></img>
-                )}
+                
+              <ReactQuill
+                value={inputUrl}
+                onChange={handleQuill}
+                placeholder="Enter your answer"
+              ></ReactQuill>
+
               </div>
             </div>
-            <div className="modal__buttons">
-              <button className="cancle" onClick={() => setIsModalOpen(false)}>
+            <div className="modal__buttons" style={{marginTop: "50px"}}>
+              <button className="cancel" onClick={() => setIsModalOpen(false)}>
                 Cancel
               </button>
               <button type="sumbit" onClick={handleQuestion} className="add">
