@@ -13,15 +13,10 @@ No more hand-raising, microphones, or wasting time on off topic questions..
 $ git clone https://github.com/KrutikaBhatt/SocialQA
 $ npm init
 ```
-
-# Usage (run fullstack app on your machine)
-
 ## Prerequisites
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
 - [Node](https://nodejs.org/en/download/) ^14.0.0
 - [npm](https://nodejs.org/en/download/package-manager/)
-
-notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
 
 ### Start
 
