@@ -5,7 +5,7 @@ import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedI
 import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
 import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
 import SearchIcon from "@material-ui/icons/Search";
-// import logo from "./img/QAS logo.png";
+
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import CloseIcon from "@material-ui/icons/Close";
@@ -13,24 +13,20 @@ import CloseIcon from "@material-ui/icons/Close";
 import "./Header.css";
 import { Avatar, Button, Input } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-// import db, { auth } from "../firebase";
-import { ExpandMore } from "@material-ui/icons";
+
 import { logout } from "../../Action/User";
 import axios from "axios";
 import { token } from "../../Utils/decodedToken";
 import { successModal } from "../../Utils/AlertModal";
 
 function Header() {
-  // const user = useSelector(selectUser);
+  
   const dispatch = useDispatch();
-
   const [IsmodalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
   const userLogin = useSelector((state) => state.userLogin);
   const [Tag,setTag] = useState("Public");
-
-  // console.log(userLogin?.userInfo?.userId);
 
   const Close = (
     <CloseIcon
@@ -76,8 +72,7 @@ function Header() {
 
   const handleLogout = () => {
     
-      dispatch(logout());
-      //alert("Logged out successfully");
+    dispatch(logout());
   };
 
   return (
@@ -114,9 +109,6 @@ function Header() {
                 onClick={handleLogout}
                 className="Avatar"
                 src={
-                // user.photo
-                //     ? user.photo
-                //     : 
                 "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
                 }
             />
@@ -124,9 +116,7 @@ function Header() {
 
             <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
             <Modal
-            // isOpen={IsmodalOpen}
-            // onRequestClose={() => setIsModalOpen(false)}
-            // shouldCloseOnOverlayClick={false}
+            
                 open={IsmodalOpen}
                 onClose={() => setIsModalOpen(false)}
                 closeOnEsc
@@ -157,8 +147,7 @@ function Header() {
                   "https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
                 }
               />
-              {/* <img src="http://tinygraphs.com/squares/helloworld" /> */}
-              {/* <p>{user?.disPlayName ? user?.disPlayName : user?.email} asked</p> */}
+              
               <div className="modal__scope">
            
               <select name="tags" id="questionTags" className="custom-select" style={{width:130}} onChange={(e) => setTag(e.target.value)}> 

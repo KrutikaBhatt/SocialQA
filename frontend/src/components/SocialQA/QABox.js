@@ -4,18 +4,17 @@ import "./QABox.css";
 import axios from "axios";
 import CloseIcon from "@material-ui/icons/Close";
 import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
-// import logo from "./img/QAS logo.png";
+
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-// import db, { auth } from "../firebase";
+
 import { ExpandMore } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { token } from "../../Utils/decodedToken";
 import { successModal } from "../../Utils/AlertModal";
 
 export default function QABox() {
-  // const user = useSelector(selectUser);
-  // const user = useSelector(selectUser);
+  
   useDispatch();
 
   const [IsmodalOpen, setIsModalOpen] = useState(false);
@@ -72,15 +71,11 @@ export default function QABox() {
           }
           className="qabox__infoAvatar"
         />
-        {/* <h5>{user?.displayName ? user?.displayName : user?.email}</h5> */}
       </div>
       <div className="qabox__socialqa" onClick={() => setIsModalOpen(true)}>
         <p>What is your question or link?</p>
       </div>
       <Modal
-            // isOpen={IsmodalOpen}
-            // onRequestClose={() => setIsModalOpen(false)}
-            // shouldCloseOnOverlayClick={false}
                 open={IsmodalOpen}
                 onClose={() => setIsModalOpen(false)}
                 closeOnEsc

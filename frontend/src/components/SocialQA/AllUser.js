@@ -18,7 +18,7 @@ function AllSpaces() {
                 </div>
                 <div className = 'allUsers'>
                     <div className = 'allUserStrip'>
-                        <img src = 'https://cdn-icons.flaticon.com/png/128/4785/premium/4785849.png?token=exp=1640246061~hmac=4146ded321c71964e93d694983e77f29' alt ='' />
+                        <img src = 'https://cdn-icons.flaticon.com/png/128/2828/premium/2828307.png?token=exp=1640622218~hmac=4b71a784974cc8f0c4be838ed3f7aac0' alt ='' />
                         <div className = 'content'>
                             <p>Movie Discussions</p>
                             <small>14K followers</small>

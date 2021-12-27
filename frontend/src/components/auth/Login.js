@@ -74,12 +74,7 @@ function Login() {
                 />
               </div>
             </div>
-            {/* <div className="login__forgButt">
-              <small>Forgot Password?</small>
-              <button onClick={handleSignIn}>Login</button>
-            </div>
-            <button onClick={registerSignIn}>New Account</button>
-          </div> */}
+           
           <div className="login__forgButt">
               <button style={{marginRight: 10}} onClick={handleControlUser}>{user ? 'Register' : 'Login'}</button>
             </div>

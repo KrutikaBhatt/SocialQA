@@ -49,28 +49,6 @@
   color: #482673;
 }
 
-/* .qHeader__icons {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.qHeader__icons > .active > .MuiSvgIcon-root {
-  color: #8f1f1b;
-}
-
-.qHeader__icon > .MuiSvgIcon-root {
-  font-size: xx-large;
-  padding: 5px 20px;
-  color: gray;
-}
-
-.qHeader__icon > .MuiSvgIcon-root:hover {
-  background-color: rgba(233, 233, 233, 0.5);
-  border-radius: 10px;
-  color: #b92b27;
-} */
-
 .qHeader__input {
   display: flex;
   align-items: center;

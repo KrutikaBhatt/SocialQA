@@ -21,13 +21,10 @@ import axios from "axios";
 function Post({ questionId, key, question, imageUrl, timestamp, users, answers, length }) {
   
   const userLogin = useSelector((state) => state.userLogin);
-
   const [IsmodalOpen, setIsModalOpen] = useState(false);
-  // const questionId = useSelector(selectQuestionId);
   const [answer, setAnswer] = useState("");
   const [getAnswers] = useState(answers);
 
-  // console.log(answers)
 
   const Close = (
     <CloseIcon
@@ -134,11 +131,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
                 {""}
                 on{" "}
                 <span className="name">
-                  {/* {timestamp && (
-                    <small>
-                      <TimeAdded date={timestamp} />
-                    </small>
-                  )} */}
                   {new Date(timestamp).toLocaleString()}
                 </span>
               </p>
@@ -235,7 +227,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers, 
     </div>
       </>) : (<>
       <img style = {{
-        //   padding: '20px',
           borderRadius: "10px",
           boxShadow: '2px 2px 12px lightgray'
       }} width = {400} src = 'https://image.freepik.com/free-vector/empty-concept-illustration_114360-1188.jpg' alt = 'no question' />

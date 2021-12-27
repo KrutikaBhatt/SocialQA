@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import parse from 'html-react-parser';
 
-// import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import "react-responsive-modal/styles.css";
@@ -25,13 +24,10 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
   const [UPVOTE,setUpvote] = useState(upvote);
   const [DOWNVOTE,setdownvote] = useState(downvote);
   const [IsmodalOpen, setIsModalOpen] = useState(false);
-  // const questionId = useSelector(selectQuestionId);
   const [answer, setAnswer] = useState("");
   const [getAnswers, setGetAnswers] = useState(answers);
   const [openAns, setOpenAns] = useState(false);
   const loggedInUser = userLogin?.userInfo?.userId;
-  
-  // console.log(answers)
 
   const Close = (
     <CloseIcon
@@ -128,7 +124,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
         .then((res) => {
           console.log(res.data);
           successModal('Answer added successfully')
-          // alert('Answer added succesfully')
           setIsModalOpen(false)
         })
         .catch((err) => {
@@ -184,11 +179,6 @@ function Post({ questionId, key, question, imageUrl, timestamp, users, answers,u
                 {""}
                 on{" "}
                 <span className="name">
-                  {/* {timestamp && (
-                    <small>
-                      <TimeAdded date={timestamp} />
-                    </small>
-                  )} */}
                   {new Date(timestamp).toLocaleString()}
                 </span>
               </p>

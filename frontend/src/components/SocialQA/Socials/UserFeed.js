@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import QuorBox from "./QuorBox";
 import "../Feed.css";
 import Post from "./UserPost";
 import axios from "axios";
@@ -33,8 +32,7 @@ function UserFeed() {
               margin: "10px 30px"
           }}>Alas! Stomach empty</h3>
           <img style = {{
-        //   padding: '20px',
-        margin: "10px 30px",
+          margin: "10px 30px",
           borderRadius: "10px",
           boxShadow: '2px 2px 12px lightgray'
       }} width = {600} src = 'https://image.freepik.com/free-vector/empty-concept-illustration_114360-1188.jpg' alt = 'no question' />

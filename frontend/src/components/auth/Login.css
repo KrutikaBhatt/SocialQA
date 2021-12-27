@@ -174,10 +174,7 @@ a{
   margin-left: 10px;
   width: 100%;
 }
-/* .login__emailPass > button:hover{
-    background-color:blue;
-    color:white !important; 
-} */
+
 .login__lang {
   display: flex;
   align-items: center;

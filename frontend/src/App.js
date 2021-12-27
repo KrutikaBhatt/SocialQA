@@ -11,21 +11,12 @@ import AllSpaces from "./components/SocialQA/AllUser";
 import Socials from './components/SocialQA/Socials'
 import AllUsers from './components/SocialQA/AllSpaces'
 import SideBarSpaces from './components/SocialQA/SidebarSpaces'
-// import { decodeToken, isExpired } from "react-jwt";
-// import myDecodedToken from "./Utils/decodedToken";
 
 function App() {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   console.log(userLogin);
 
-  // console.log(myDecodedToken);
-  // const _userInfo = localStorage.getItem("userInfo");
-  // console.log(_userInfo);
-
-  // const _userInfo = localStorage.getItem("userInfo");
-  // const token = _userInfo ? JSON.parse(_userInfo).token : "";
-  // console.log(decodeToken(token));
   const checkToken = useCallback(() => {
     const _userInfo = localStorage.getItem("userInfo");
     const token = _userInfo ? JSON.parse(_userInfo).token : "";
@@ -56,14 +47,6 @@ function App() {
       checkToken();
     }, 1000 * 60 * 5);
   }, [checkToken]);
-
-  // useEffect(() => {
-  //   if (myDecodedToken !== null) {
-  //     setStatus(myDecodedToken.status);
-  //   } else {
-  //     setStatus(false);
-  //   }
-  // }, [userLogin]);
 
   const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route

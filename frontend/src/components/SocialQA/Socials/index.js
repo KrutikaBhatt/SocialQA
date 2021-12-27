@@ -31,9 +31,6 @@ function Index() {
           <br></br>
           <h3>Add topics for a customized feed with questions you can answer.</h3>
           </div>
-          {/* <Sidebar /> */}
-          
-          {/* <Widget /> */}
           <UserFeed />
         </div>
       </div>
