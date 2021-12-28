@@ -70,6 +70,6 @@ $ npm start // in both the terminal 1st backend and then frontend
 [Create new Issues](https://github.com/KrutikaBhatt/SocialQA/issues) (preferred)
 
 ## Author
-[KrutikaBhatt](https://github.com/KrutikaBhatt),
-[Aayush-Chheda](https://github.com/Aayush-Chheda),
+[KrutikaBhatt](https://github.com/KrutikaBhatt),<br>
+[Aayush-Chheda](https://github.com/Aayush-Chheda),<br>
 [shubhamdathia7257](https://github.com/shubhamdathia7257)
