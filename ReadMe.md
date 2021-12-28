@@ -6,6 +6,8 @@ SOCIALQA
 > SOCIALQA is a fullstack implementation in MERN [MongoDB, Expressjs, React/Redux, Nodejs] and a simple and powerful way to know what questions your audience has and which are most important to the entire group.
 No more hand-raising, microphones, or wasting time on off topic questions..
 
+```
+
 ## Clone or Download
 ```terminal
 $ git clone https://github.com/KrutikaBhatt/SocialQA
@@ -54,6 +56,40 @@ $ npm start // in both the terminal 1st backend and then frontend
 3. Google Chrome
 4. MongoDB Compass
 5. Robo3T
+
+## Screen Shots
+<h3>Login Page</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/login.PNG">
+<br>
+
+<h3>Home Page</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/homepage.PNG" width="600">
+<br>
+
+<h3>Add Question</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/AddQuestion.PNG">
+<br>
+
+<h3>Questions and Answer Modals</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/QA.PNG">
+<br>
+
+<h3>Spaces `[Eg : Music]`</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/Spaces.PNG">
+<br>
+
+
+<h3>All Users</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/AllUsers.PNG">
+<br>
+
+
+<h3>Users Feeds</h3>
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/MyFeed.PNG">
+<br>
+
+
+
 
 ## Future Scope
 1. Implementation of Search feature.
