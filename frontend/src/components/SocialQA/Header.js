@@ -188,7 +188,7 @@ function Header() {
               <ReactQuill
                 value={inputUrl}
                 onChange={handleQuill}
-                placeholder="Enter your answer"
+                placeholder="Enter your question's description"
               ></ReactQuill>
 
               </div>
