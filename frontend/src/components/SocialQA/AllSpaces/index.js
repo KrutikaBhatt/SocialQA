@@ -17,11 +17,11 @@ function Index() {
         <div className = 'top-box'>
             <div className = 'top-box-container'>
             <h3>Welcome to SocialQA !</h3>
-            <p>Follow Quorans to explore your interestes on SocialQA</p>
+            <p>Follow Users to explore your interestes on SocialQA</p>
             </div>
             <div className = 'main-content'>
-                <h2>Discover All Quorans</h2>
-                <p>Check out all these Quorans</p>
+                <h2>Discover All Users</h2>
+                <p>Check out all these Users</p>
                 <div className = 'userCards'>
                     {
                         users.map((_user) => (<>
