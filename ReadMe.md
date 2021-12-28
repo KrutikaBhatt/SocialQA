@@ -6,7 +6,13 @@ SOCIALQA
 > SOCIALQA is a fullstack implementation in MERN [MongoDB, Expressjs, React/Redux, Nodejs] and a simple and powerful way to know what questions your audience has and which are most important to the entire group.
 No more hand-raising, microphones, or wasting time on off topic questions..
 
-```
+
+SocialQA is a semester project for FSD MERN OEHM. The project was implemented by Group 21 
+  - Krutika Bhatt ```1911069```
+  - Aayush Chheda  ```1911070```
+  - Shubham Dathia  ```1911072```
+  <br>
+  The course was completed under mentorship of Prof. Vaibhav Vasani, Prof Swapnil Pawar and Prof. Manish Potey
 
 ## Clone or Download
 ```terminal
@@ -59,33 +65,33 @@ $ npm start // in both the terminal 1st backend and then frontend
 
 ## Screen Shots
 <h3>Login Page</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/login.PNG">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/login.PNG" width="700">
 <br>
 
 <h3>Home Page</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/homepage.PNG" width="600">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/homepage.PNG" width="700">
 <br>
 
 <h3>Add Question</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/AddQuestion.PNG">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/AddQuestion.PNG" width="700">
 <br>
 
 <h3>Questions and Answer Modals</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/QA.PNG">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/QA.PNG" width="700">
 <br>
 
 <h3>Spaces `[Eg : Music]`</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/Spaces.PNG">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/Spaces.PNG" width="700">
 <br>
 
 
 <h3>All Users</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/AllUsers.PNG">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/AllUsers.PNG" width="700">
 <br>
 
 
 <h3>Users Feeds</h3>
-<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/MyFeed.PNG">
+<img align="center" src="https://github.com/KrutikaBhatt/SocialQA/blob/master/screenshots/MyFeed.PNG" width="700">
 <br>
 
 
